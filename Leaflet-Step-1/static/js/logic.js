@@ -1,5 +1,5 @@
-var queryUrl = "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_month.geojson"
-
+const API_KEY = "pk.eyJ1Ijoic2hhZGVldGFiYXNpIiwiYSI6ImNrbTVpaG05ajBlczgydnFzcDNneG1qNnAifQ.gq0fRcM5vgCz4V7lSJUCFg";
+var queryUrl = "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geojson"
 
 d3.json(queryUrl, function(data) {
 
@@ -112,8 +112,8 @@ function createMap(earthquakes) {
   }).addTo(myMap);
 
   // Query to retrieve the faultline data
-  var faultlinequery = "https://raw.githubusercontent.com/fraxen/tectonicplates/master/GeoJSON/PB2002_plates.json";
-  
+  var faultlinequery = "https://github.com/fraxen/tectonicplates"
+
   // Create the faultlines and add them to the faultline layer
   d3.json(faultlinequery, function(data) {
     L.geoJSON(data, {
